@@ -1,0 +1,3 @@
+testando printstream
+
+escrevendo sem quebrar linhasescrevendo na mesma linha

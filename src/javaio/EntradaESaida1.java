@@ -13,7 +13,7 @@ import java.io.Reader;
 import java.io.Writer;
 import java.util.Scanner;
 
-public class EntradaESaida {
+public class EntradaESaida1 {
 
   public static void main(String[] args) {
 
