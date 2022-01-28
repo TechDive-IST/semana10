@@ -17,7 +17,7 @@ public class EntradaESaida1 {
 
   public static void main(String[] args) {
 
-    /*try (InputStream fis = new FileInputStream("teste.txt");
+    try (InputStream fis = new FileInputStream("teste.txt");
          Reader isr = new InputStreamReader(fis);
          BufferedReader br = new BufferedReader(isr)) {
 
@@ -41,12 +41,12 @@ public class EntradaESaida1 {
       bw.write("exemplo de texto na última linha.");
     } catch (IOException e) {
       e.printStackTrace();
-    }*/
+    }
 
     Scanner input = new Scanner(System.in);
 
     try (InputStream fis = System.in; //new FileInputStream("teste.txt");
-         Reader isr = new InputStreamReader(fis);
+         Reader isr = new InputStreamReader(fis, "UTF-8");
          BufferedReader br = new BufferedReader(isr);
          OutputStream fos = System.out; //new FileOutputStream("teste_saida.txt");
          Writer osw = new OutputStreamWriter(fos);

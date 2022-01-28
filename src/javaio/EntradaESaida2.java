@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,7 +30,7 @@ public class EntradaESaida2 {
       bw.write("exemplo de texto na última linha.");
     }
 
-    try (BufferedReader br = new BufferedReader(new FileReader("teste.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("teste.txt", StandardCharsets.UTF_8))) {
       String linha = br.readLine();
       while (linha != null) {
         System.out.println(linha);
@@ -54,7 +56,7 @@ public class EntradaESaida2 {
       ps.print("escrevendo na mesma linha");
     }
 
-    try (PrintWriter pw = new PrintWriter("teste_saida4.txt")) {
+    try (PrintWriter pw = new PrintWriter("teste_saida4.txt", "UTF-8")) {
       pw.println("testando print writer");
       pw.println();
       pw.printf("Print%s é muito legal.", "Writer");
@@ -62,7 +64,7 @@ public class EntradaESaida2 {
 
     // File arquivo = new File("contas.csv");
 
-    try(Scanner scanner = new Scanner(new File("contas.csv"));
+    try(Scanner scanner = new Scanner(new File("contas.csv"), "UTF-8");
         PrintWriter pw = new PrintWriter("saida_contas.txt")) {
 
       while (scanner.hasNextLine()) {
@@ -121,6 +123,9 @@ public class EntradaESaida2 {
     try (PrintStream ps = new PrintStream(new FileOutputStream("teste_saida6.txt", true))) {
       ps.println("Teste append");
     }
+
+
+    System.out.print(Charset.defaultCharset().displayName());
 
   }
 

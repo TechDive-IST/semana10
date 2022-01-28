@@ -185,6 +185,9 @@ public class MainDatas {
 
     System.out.println(offsetDateTimePlusSixMonths.toLocalDateTime());
     System.out.println(zonedDateTimePlusSixMonths.toLocalDateTime());
+
+
+    LocalDate date = LocalDate.parse("2022-01-28", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
   }
 
 
